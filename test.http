@@ -1,0 +1,30 @@
+### Kullanıcı Kayıt Testi
+POST http://localhost:3000/api/auth/register
+Content-Type: application/json
+
+{
+  "name": "Orhan İzmirli",
+  "email": "orhan@example.com",
+  "password": "123456"
+}
+
+###
+
+### Kullanıcı Giriş Testi
+POST http://localhost:3000/api/auth/login
+Content-Type: application/json
+
+{
+  "email": "orhan@example.com",
+  "password": "123456"
+}
+
+###
+
+### Admin - Kullanıcıları Getir
+GET http://localhost:3000/api/admin/users
+
+
+### ✅ Admin - Get all users (authorized)
+GET http://localhost:3000/api/admin/users
+Authorization: orhan@example.com

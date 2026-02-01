@@ -1,0 +1,75 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <title>My Orders – The Blossom Bookstore</title>
+  <link rel="stylesheet" href="styles.css" />
+  <link rel="icon" href="images/logo.png" />
+  <style>
+    body {
+      background: url("images/bg.png") no-repeat center center fixed;
+      background-size: cover;
+      font-family: 'Segoe UI', sans-serif;
+      color: #2c2c2c;
+      padding: 40px;
+    }
+
+    h1 {
+      text-align: center;
+      color: #2e604e;
+      font-size: 2.4em;
+      margin-bottom: 40px;
+    }
+
+    .order-item {
+      background: rgba(255, 255, 255, 0.85);
+      border-radius: 10px;
+      padding: 20px;
+      margin-bottom: 20px;
+      box-shadow: 0 2px 8px rgba(0, 0, 0, 0.15);
+    }
+
+    .order-item h2 {
+      margin-top: 0;
+      color: #1e3d35;
+    }
+
+    .order-item p {
+      margin: 5px 0;
+    }
+
+    .container {
+      max-width: 800px;
+      margin: auto;
+    }
+  </style>
+</head>
+<body>
+  <div class="container">
+    <h1>📦 My Orders</h1>
+    <div id="ordersList"></div>
+  </div>
+
+  <script>
+    const orders = JSON.parse(localStorage.getItem("orders")) || [];
+    const ordersList = document.getElementById("ordersList");
+
+    if (orders.length === 0) {
+      ordersList.innerHTML = "<p>No orders found.</p>";
+    } else {
+      orders.forEach(order => {
+        const div = document.createElement("div");
+        div.className = "order-item";
+        div.innerHTML = `
+          <h2>${order.title}</h2>
+          <p><strong>Quantity:</strong> ${order.qty}</p>
+          <p><strong>Price:</strong> $${order.price.toFixed(2)}</p>
+          <p><strong>Date:</strong> ${new Date(order.date).toLocaleString()}</p>
+        `;
+        ordersList.appendChild(div);
+      });
+    }
+  </script>
+  <!-- ✅ Chatbot HTML -->
+</body>
+</html>

@@ -1,0 +1,92 @@
+<!DOCTYPE html>
+<html lang="en" data-theme="light">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>Contact Us – The Blossom Bookstore</title>
+  <link rel="stylesheet" href="contact.css" />
+  <script src="contact.js" defer></script>
+</head>
+<body>
+  <!-- Site Header -->
+  <header class="site-header">
+    <img src="images/logo.png"      alt="Blossom Logo Light" class="header-logo logo-light" />
+    <img src="images/logo_dark.png" alt="Blossom Logo Dark"  class="header-logo logo-dark" />
+    <div class="site-title">The Blossom Bookstore</div>
+    <div class="header-controls">
+      <button class="darkmode-toggle" title="Toggle theme" aria-pressed="false">🌓</button>
+    </div>
+  </header>
+
+  <!-- Contact Form & Extensions -->
+  <main class="contact-wrapper">
+    <h2 class="contact-header">Contact Us</h2>
+
+    <!-- Contact Form -->
+    <form id="contactForm">
+      <label>
+        Name
+        <input type="text" id="contactName" placeholder="Your name" required>
+      </label>
+      <label>
+        Email
+        <input type="email" id="contactEmail" placeholder="you@example.com" required>
+      </label>
+      <label>
+        Subject
+        <input type="text" id="contactSubject" placeholder="Subject" required>
+      </label>
+      <label>
+        Phone (optional)
+        <input type="tel" id="contactPhone" placeholder="+1 555‑555‑5555">
+      </label>
+      <label class="full-width">
+        Message
+        <textarea id="contactMessage" placeholder="Your message…" required></textarea>
+      </label>
+      <button type="submit" class="form-btn">Send Message</button>
+    </form>
+
+    <!-- FAQ Accordion -->
+    <section class="faq-section">
+      <h3>Frequently Asked Questions</h3>
+      <div class="faq-item">
+        <button class="faq-question">What are your shipping times?</button>
+        <div class="faq-answer">
+          <p>We ship within 1–2 business days. Delivery usually takes 3–5 days.</p>
+        </div>
+      </div>
+      <div class="faq-item">
+        <button class="faq-question">How do I return a book?</button>
+        <div class="faq-answer">
+          <p>You can return any book within 30 days. Just contact us via the form above.</p>
+        </div>
+      </div>
+      <div class="faq-item">
+        <button class="faq-question">Do you ship internationally?</button>
+        <div class="faq-answer">
+          <p>Yes! We ship worldwide. International rates may apply.</p>
+        </div>
+      </div>
+    </section>
+  </main>
+
+  <!-- Chat Toggle Button -->
+  <button id="chatToggle" class="chat-toggle">💬</button>
+
+  <!-- Chat Widget -->
+  <div id="chatWidget" class="chat-widget">
+    <div class="chat-header">
+      <span>Chat with us</span>
+      <button id="chatClose" class="chat-close">✕</button>
+    </div>
+    <div id="chatBody" class="chat-body">
+      <div class="chat-message bot">Hi there! How can we help you today?</div>
+    </div>
+    <div class="chat-input-area">
+      <input id="chatInput" type="text" placeholder="Type a message…" />
+      <button id="chatSend">Send</button>
+    </div>
+  </div>
+</body>
+</html>

@@ -1,0 +1,132 @@
+<!DOCTYPE html>
+<html lang="en" data-theme="light">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>Become a Member – The Blossom Bookstore</title>
+  <link rel="stylesheet" href="member.css" />
+
+  <!-- Password strength -->
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/zxcvbn/4.4.2/zxcvbn.js"
+          integrity="sha512-+Z1bkJw5PXPOhn5FnaRs8h3i6TVawlswzAxtENvmuRiZKR3mFajm1pNlfo0oBzIz6tq6aXlUQx3g/VvWKCXD3g=="
+          crossorigin="anonymous" referrerpolicy="no-referrer"></script>
+
+  <!-- ✅ Firebase SDK -->
+  <script src="https://www.gstatic.com/firebasejs/10.12.0/firebase-app-compat.js"></script>
+  <script src="https://www.gstatic.com/firebasejs/10.12.0/firebase-auth-compat.js"></script>
+  <script src="https://www.gstatic.com/firebasejs/10.12.0/firebase-firestore-compat.js"></script>
+
+  <script src="member.js" defer></script>
+</head>
+<body>
+  <!-- Site Header -->
+  <header class="site-header">
+    <img src="images/logo.png" alt="Blossom Logo Light" class="header-logo logo-light" />
+    <img src="images/logo_dark.png" alt="Blossom Logo Dark" class="header-logo logo-dark" />
+    <h1 class="site-title">The Blossom Bookstore</h1>
+  </header>
+
+  <main class="member-wrapper">
+    <div class="member-box">
+      <div class="form-header">
+        <h2>Become a Member</h2>
+        <button class="darkmode-toggle" title="Toggle theme" aria-pressed="false">🌓</button>
+      </div>
+
+      <form id="memberForm" novalidate>
+        <div class="big-grid">
+          <div class="decor-label">Name</div>
+          <input type="text" id="name" name="name" required placeholder="Enter your name">
+
+          <div class="decor-label">User Name</div>
+          <input type="text" id="username" name="username" required placeholder="Choose a username">
+
+          <div class="decor-label">Surname</div>
+          <input type="text" id="surname" name="surname" required placeholder="Enter your surname">
+
+          <div class="decor-label">Phone</div>
+          <div class="phone-field">
+            <select id="phone-country" name="phoneCountry">
+              <option value="tr">+90</option>
+              <option value="pl">+48</option>
+              <option value="us">+1</option>
+            </select>
+            <input type="tel" id="phone" name="phone" required placeholder="Enter phone number">
+          </div>
+
+          <div class="decor-label">Email</div>
+          <input type="email" id="email" name="email" required placeholder="Enter your email">
+
+          <div class="decor-label">Password</div>
+          <div class="password-field">
+            <input type="password" id="password" name="password" required minlength="6" placeholder="Choose a password">
+            <button type="button" class="toggle-password" aria-label="Show password">👁️</button>
+          </div>
+
+          <div class="decor-label">Date of Birth</div>
+          <input type="date" id="dob" name="dob" required>
+
+          <div class="decor-label">Confirm Password</div>
+          <div class="password-field">
+            <input type="password" id="confirmPassword" name="confirmPassword" required minlength="6" placeholder="Re-enter password">
+            <button type="button" class="toggle-confirm-password" aria-label="Show password">👁️</button>
+          </div>
+        </div>
+
+        <!-- Password Strength -->
+        <div class="password-strength">
+          <div class="strength-meter"><div class="strength-bar"></div></div>
+          <small id="strength-text"></small>
+        </div>
+
+        <!-- ✅ Social Login -->
+        <div class="social-login">
+          <button type="button" class="social-btn google">
+            <img src="images/google.png" alt="Google" class="social-icon">
+            Continue with Google
+          </button>
+          <button type="button" class="social-btn facebook">
+            <img src="images/facebook.png" alt="Facebook" class="social-icon">
+            Continue with Facebook
+          </button>
+        </div>
+
+        <!-- Newsletter -->
+        <div class="newsletter">
+          <input type="checkbox" id="newsletter" name="newsletter">
+          <label for="newsletter">Subscribe to our newsletter</label>
+        </div>
+
+        <!-- Terms and Conditions -->
+        <div class="terms">
+          <input type="checkbox" id="terms" name="terms" required>
+          <label for="terms">
+            I have read, understood, and agree to the
+            <a href="#" id="terms-link">Terms and Conditions</a>.
+          </label>
+        </div>
+
+        <button type="submit" class="form-btn">Join Now</button>
+      </form>
+    </div>
+  </main>
+
+  <!-- Popups -->
+  <div id="terms-popup" class="popup hidden">
+    <div class="popup-content">
+      <h3>Terms and Conditions</h3>
+      <p>
+        By joining, you agree to our use of your information to provide personalized offers.
+      </p>
+      <button id="terms-close">Close</button>
+    </div>
+  </div>
+
+  <div id="success-popup" class="popup hidden">
+    <div class="popup-content">
+      <p>Registration successful!</p>
+      <button id="popup-close">OK</button>
+    </div>
+  </div>
+</body>
+</html>

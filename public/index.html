@@ -1,0 +1,73 @@
+<!DOCTYPE html>
+<html lang="en" data-theme="light">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>The Blossom Bookstore</title>
+  <link rel="stylesheet" href="styles.css">
+  <script src="scripts.js" defer></script>
+</head>
+<body>
+  <div class="container">
+    <aside class="sidebar">
+      <nav>
+        <a class="nav-button" href="login.html" target="_blank" rel="noopener noreferrer">Member Login</a>
+        <a class="nav-button" href= "member.html" target="_blank" rel="noopener noreferrer">Become a Member</a>
+        <a class="nav-button" href="login.html" target="_blank" rel="noopener noreferrer">Our Book Garden</a>
+        <a class="nav-button" href= "about.html" target="_blank" rel="noopener noreferrer">About Us</a>
+        <a class="nav-button" href="contact.html" target="_blank" rel="noopener noreferrer">Contact</a>
+      </nav>
+    </aside>
+
+    <main class="main-content">
+      <div class="header-box">
+        <!-- Dark Mode Toggle -->
+        <button class="darkmode-toggle" title="Toggle dark mode" aria-pressed="false">🌓</button>
+
+        <!-- Light / Dark Logos -->
+        <img src="images/logo.png"      alt="Blossom Logo Light" class="logo-img logo-light">
+        <img src="images/logo_dark.png" alt="Blossom Logo Dark"  class="logo-img logo-dark">
+
+        <h1>The Blossom Bookstore</h1>
+        <p class="tagline">
+          Nurture that beautiful garden inside you with some amazing books!
+        </p>
+      </div>
+
+      <h2 class="section-title">Gardeners' Choices</h2>
+
+      <div class="book-row">
+        <img src="images/lord_of_the_rings.jpg"
+             alt="The Lord of the Rings Series"
+             data-title="The Lord of the Rings Series"
+             data-desc="Embark on the sweeping saga of Middle‑earth, following the Fellowship as they journey across vast lands, forge unbreakable bonds, and confront the rise of Sauron. This timeless trilogy weaves epic battles, rich mythology, and the enduring power of hope into a story that has captivated generations.">
+        <img src="images/harry_potter.jpg"
+             alt="Harry Potter Series"
+             data-title="Harry Potter Series"
+             data-desc="Join Harry, Hermione, and Ron through seven years at Hogwarts School of Witchcraft and Wizardry. From discovering hidden magic to confronting the darkest wizard of all time, this beloved series charts their growth, friendship, and courage in a richly imagined world where good battles evil and love conquers fear.">
+        <img src="images/animal_farm.jpg"
+             alt="Animal Farm"
+             data-title="Animal Farm"
+             data-desc="Dive into George Orwell’s sharp allegory of power and corruption on Manor Farm, where a group of determined animals overthrow their human owner only to face a new tyranny of their own making. A concise and provocative classic.">
+        <img src="images/mr_mercedes.jpg"
+             alt="Mr. Mercedes"
+             data-title="Mr. Mercedes"
+             data-desc="Follow retired detective Bill Hodges as he races against time to stop a twisted killer known only as 'Mr. Mercedes'—a chilling adversary who taunts the police with a cryptic letter and a deadly Mercedes Benz. An electrifying crime thriller.">
+        <img src="images/sherlock_holmes.jpg"
+             alt="Sherlock Holmes Series"
+             data-title="Sherlock Holmes Series"
+             data-desc="Step into Victorian London alongside the legendary detective Sherlock Holmes and his steadfast friend Dr. Watson. Sir Arthur Conan Doyle’s enduring stories blend razor‑sharp deduction, intricate mysteries, and unforgettable characters, making this collection a cornerstone of detective fiction.">
+      </div>
+    </main>
+  </div>
+
+  <!-- Book Detail Modal -->
+  <div id="bookModal" class="modal">
+    <div class="modal-content">
+      <span class="modal-close" title="Close">&times;</span>
+      <h3 id="modalTitle"></h3>
+      <p id="modalDesc"></p>
+    </div>
+  </div>
+</body>
+</html>

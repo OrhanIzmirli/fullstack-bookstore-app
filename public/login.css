@@ -1,0 +1,169 @@
+:root {
+  --bg: #f2f4ef; --fg: #4a5a3e;
+  --card-bg: rgba(230,232,226,0.8);
+  --primary-color: #4a5a3e; --light-color: #f2f4ef;
+  --error-color: #e74c3c;
+}
+[data-theme="dark"] {
+  --bg: #2b2b2b; --fg: #e6e6e6;
+  --card-bg: rgba(40,40,40,0.8);
+  --primary-color: #e6e6e6; --light-color: #2b2b2b;
+}
+
+* { box-sizing:border-box; margin:0; padding:0; }
+html, body {
+  height:100vh;
+  display:flex; flex-direction:column;
+  background: var(--bg) url('images/bg.png') no-repeat center fixed;
+  background-size:cover; color:var(--fg);
+  font-family:Georgia, serif;
+}
+
+/* Site Header: logo + title only */
+.site-header {
+  display:flex; align-items:center; justify-content:center;
+  background:var(--card-bg); border-radius:50px;
+  padding:20px 40px; margin:40px auto 0; max-width:900px;
+  gap:16px; position:relative; z-index:1;
+}
+.header-logo { max-height:50px; }
+.logo-dark { display:none; }
+[data-theme="dark"] .logo-light { display:none; }
+[data-theme="dark"] .logo-dark { display:block; }
+.site-title {
+  font-family:'Playfair Display', serif;
+  font-size:2rem;
+  color:var(--primary-color);
+}
+
+/* Login Box */
+.login-wrapper {
+  flex:1;
+  display:flex; justify-content:center; align-items:center;
+}
+.login-box {
+  position:relative;
+  background:var(--card-bg);
+  border-radius:12px;
+  padding:50px 40px;
+  width:400px; text-align:center;
+  animation:fadeIn .5s ease;
+}
+@keyframes fadeIn {
+  from { opacity:0; transform:translateY(-10px); }
+  to   { opacity:1; transform:translateY(0); }
+}
+
+/* Form Header: title + toggle */
+.form-header {
+  display:flex; align-items:center;
+  justify-content:center; gap:12px;
+  margin-bottom:30px;
+}
+.form-header h2 {
+  font-size:1.75rem; color:var(--primary-color);
+  margin:0;
+}
+.darkmode-toggle {
+  background:none; border:none;
+  font-size:1.5rem; cursor:pointer;
+  color:var(--primary-color);
+  transition:color .2s;
+}
+.darkmode-toggle[aria-pressed="true"] {
+  color:var(--light-color);
+}
+
+/* Input Groups */
+.input-group { margin-bottom:20px; text-align:left; }
+.input-group input {
+  width:100%; padding:14px 16px;
+  border:1px solid var(--primary-color);
+  border-radius:6px; background:rgba(255,255,255,0.1);
+  color:var(--fg); font-size:1rem;
+  transition:border-color .2s, box-shadow .2s;
+}
+.input-group input:focus {
+  outline:none; border-color:var(--light-color);
+  box-shadow:0 0 0 3px rgba(74,90,62,0.3);
+}
+.error {
+  display:block; height:16px;
+  font-size:.85rem; color:var(--error-color);
+  margin-top:4px;
+}
+
+/* Show/Hide Password */
+.password-wrapper { position:relative; }
+.pw-toggle {
+  position:absolute; top:50%; right:8px;
+  transform:translateY(-50%);
+  background:none; border:none; cursor:pointer;
+  font-size:1.1rem; color:var(--primary-color);
+}
+
+/* Login Link as Button */
+.form-btn {
+  display:inline-flex; align-items:center;
+  justify-content:center; gap:8px;
+  width:100%; padding:14px;
+  background:var(--primary-color); color:var(--light-color);
+  border:none; border-radius:6px; font-size:1rem;
+  text-decoration:none; cursor:pointer;
+  transition:background .2s, transform .2s;
+}
+.form-btn:hover {
+  background:var(--light-color); color:var(--primary-color);
+}
+.form-btn:active {
+  transform:scale(0.97);
+}
+
+/* Spinner */
+.spinner {
+  display:none; width:18px; height:18px;
+  border:3px solid var(--light-color);
+  border-top-color:transparent;
+  border-radius:50%; animation:spin 1s linear infinite;
+}
+@keyframes spin { to{transform:rotate(360deg)} }
+
+/* Forgot Password */
+.forgot-password {
+  margin-top:12px; font-size:.9rem;
+}
+.forgot-password a {
+  color:var(--primary-color); text-decoration:underline;
+}
+
+/* Social Login */
+.social-login {
+  margin:20px 0; display:flex; gap:10px;
+  justify-content:center;
+}
+.social-btn {
+  flex:1; padding:10px;
+  border:1px solid var(--primary-color);
+  border-radius:6px; background:var(--card-bg);
+  color:var(--primary-color);
+  display:flex; align-items:center; justify-content:center;
+  gap:8px; cursor:pointer;
+  transition:background .2s, color .2s;
+}
+.social-icon {
+  width:20px; height:20px; object-fit:contain;
+}
+.social-btn.google:hover {
+  background:#db4437; color:#fff;
+}
+.social-btn.facebook:hover {
+  background:#3b5998; color:#fff;
+}
+
+/* Signup link */
+.signup-link {
+  margin-top:20px; font-size:.9rem;
+}
+.signup-link a {
+  color:var(--primary-color); text-decoration:underline;
+}

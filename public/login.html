@@ -1,0 +1,88 @@
+<!DOCTYPE html>
+<html lang="en" data-theme="dark">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>Member Login – The Blossom Bookstore</title>
+  <link rel="stylesheet" href="login.css" />
+
+  <!-- ✅ Firebase SDK'ları (compat sürüm) -->
+  <script src="https://www.gstatic.com/firebasejs/10.12.0/firebase-app-compat.js"></script>
+  <script src="https://www.gstatic.com/firebasejs/10.12.0/firebase-auth-compat.js"></script>
+  <script src="https://www.gstatic.com/firebasejs/10.12.0/firebase-firestore-compat.js"></script>
+
+  <!-- ✅ Firebase Config -->
+  <script>
+    const firebaseConfig = {
+      apiKey: "AIzaSyAlmzmtJTprvoam8XN-OhazoRkOaIDMsgA",
+      authDomain: "kitaplikproje.firebaseapp.com",
+      projectId: "kitaplikproje",
+      storageBucket: "kitaplikproje.appspot.com",
+      messagingSenderId: "933048937675",
+      appId: "1:933048937675:web:93bba4b08d30cda26cbf4e"
+    };
+    firebase.initializeApp(firebaseConfig);
+  </script>
+
+  <!-- ✅ JS -->
+  <script src="login.js" defer></script>
+</head>
+<body>
+  <header class="site-header">
+    <img src="images/logo.png" alt="Blossom Logo Light" class="header-logo logo-light" />
+    <img src="images/logo_dark.png" alt="Blossom Logo Dark" class="header-logo logo-dark" />
+    <h1 class="site-title">The Blossom Bookstore</h1>
+  </header>
+
+  <div class="login-wrapper">
+    <div class="login-box" role="form" aria-labelledby="loginTitle">
+      <div class="form-header">
+        <h2 id="loginTitle">Member Login</h2>
+        <button class="darkmode-toggle" title="Toggle dark mode" aria-pressed="true">🌓</button>
+      </div>
+
+      <form id="loginForm" novalidate>
+        <div class="input-group">
+          <input type="email" id="email" placeholder="Email" required aria-describedby="userError" />
+          <span class="error" id="userError" aria-live="polite"></span>
+        </div>
+
+        <div class="input-group">
+          <div class="password-wrapper">
+            <input type="password" id="password" placeholder="Password" required minlength="6" aria-describedby="passError" />
+            <button type="button" class="pw-toggle" aria-label="Show password">👁️</button>
+          </div>
+          <span class="error" id="passError" aria-live="polite"></span>
+        </div>
+
+        <button type="submit" class="form-btn">
+          <span class="btn-text">Login</span>
+        </button>
+
+        <p class="forgot-password">
+          <a href="forgot.html" target="_blank" rel="noopener noreferrer">
+            Forgot your password?
+          </a>
+        </p>
+      </form>
+
+      <div class="social-login">
+        <button class="social-btn google">
+          <img src="images/google.png" alt="Google logo" class="social-icon" />
+          Continue with Google
+        </button>
+        <button class="social-btn facebook">
+          <img src="images/facebook.png" alt="Facebook logo" class="social-icon" />
+          Continue with Facebook
+        </button>
+      </div>
+
+      <p class="signup-link">
+        <a href="member.html" target="_blank" rel="noopener noreferrer">
+          Not a member yet? Sign up here!
+        </a>
+      </p>
+    </div>
+  </div>
+</body>
+</html>
