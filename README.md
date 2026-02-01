@@ -1,145 +1,130 @@
-Fullstack Bookstore Web Application
+# Currency Exchange App
 
-A full-stack bookstore web application that allows users to browse books, manage wishlists and carts, place orders through Stripe, and provides an admin panel for user management.
-The project demonstrates a complete client–server architecture with authentication, role-based access control, and third-party API integrations.
+A full-stack currency exchange application featuring secure authentication, external API integration, and a simulated payment system.
 
-Features
+---
 
-User authentication with email/password
+## Project Purpose
 
-Google and Facebook login support
+This project was developed to demonstrate core full-stack development skills, including:
 
-Persistent user sessions
+- Backend and frontend integration
+- Secure authentication and authorization
+- External API consumption
+- Database design and management
+- Clean and maintainable project structure
 
-Book catalog fetched from an external API (Open Library)
+It is suitable for portfolio usage, CV presentation, and junior developer job applications.
 
-Search and sorting functionality
+---
 
-Wishlist and shopping cart management
+## Features
 
-Secure payments with Stripe
+### Authentication & Security
+- User registration and login using JWT authentication
+- Password hashing with bcrypt
+- Role-based access control (Admin / User)
 
-Order history for users
+### Core Functionality
+- Real-time currency exchange rates fetched from an external API
+- Wallet system for managing balances
+- Currency conversion operations
+- Payment simulation for testing financial flows
 
-Admin panel with user management (delete users)
+### User Management
+- User profile management
+- Admin-only access to user administration
 
-Protected routes for authenticated users and admins only
+---
 
-Tech Stack
+## Tech Stack
 
-Frontend
+### Frontend
+- HTML
+- CSS
+- JavaScript
 
-HTML, CSS, JavaScript
+### Backend
+- Node.js
+- Express.js
 
-Responsive UI with dynamic components
+### Database
+- SQLite
+- Sequelize ORM
 
-LocalStorage for client-side state management
+---
 
-Backend
+## Application Overview
 
-Node.js
+### Home Page
 
-Express.js
+Main landing page introducing the application and highlighting key features.
 
-JWT-based authentication
+<!-- Add home page screenshot here -->
+<img width="1920" height="993" src="https://github.com/user-attachments/assets/12147f15-96e1-49f2-8906-e212daac0399" />
 
-Role-based authorization (Admin / User)
+<img width="1920" height="994" src="https://github.com/user-attachments/assets/939a7b96-074c-40d3-9a5f-0eee468453bb" />
 
-Database & Services
+---
 
-Firebase Firestore
+### Book Store / Catalog
 
-Firebase Authentication
+Users can browse items fetched from an external API, search by title or author, and sort results by price or name.
 
-Stripe Payments
+<!-- Add catalog screenshots here -->
+<img width="1920" height="1005" src="https://github.com/user-attachments/assets/22859c5f-05b0-4bf6-9c2b-9011e7b127ec" />
 
-Open Library API
+<img width="936" height="666" src="https://github.com/user-attachments/assets/07f78cb8-303f-41f7-9691-067ebc5ee9b4" />
 
-Application Overview
-Home Page
+<img width="1899" height="995" src="https://github.com/user-attachments/assets/6537ed35-d983-459a-83ba-6b4be80be9e0" />
 
-Main landing page introducing the bookstore and highlighting featured books.
+---
 
-<img width="1920" height="993" alt="{3EAC56AE-12BD-48EA-BF39-D17EF648CCB5}" src="https://github.com/user-attachments/assets/12147f15-96e1-49f2-8906-e212daac0399" />
+### Wishlist & Cart
 
-<img width="1920" height="994" alt="{5F98ED9E-3E54-4397-822E-5F99EF95A92B}" src="https://github.com/user-attachments/assets/939a7b96-074c-40d3-9a5f-0eee468453bb" />
+Users can add items to their wishlist or shopping cart.  
+Wishlist and cart data are preserved across sessions.
 
+<!-- Add wishlist & cart screenshots here -->
+<img width="863" height="1007" src="https://github.com/user-attachments/assets/45ee04ae-e4d1-45fe-b518-16df55563109" />
 
-Book Store / Catalog
+<img width="1920" height="1011" src="https://github.com/user-attachments/assets/69c75b24-633a-4972-8693-a8ae4482ca8b" />
 
-Users can browse books fetched from an external API, search by title or author, and sort by price or name.
+---
 
-<img width="1920" height="1005" alt="{B09BF2C2-9B57-4754-9D4D-319A0F790F8B}" src="https://github.com/user-attachments/assets/22859c5f-05b0-4bf6-9c2b-9011e7b127ec" />
-<img width="936" height="666" alt="{32E3DA17-558C-4F8B-9883-C444E4F04BEF}" src="https://github.com/user-attachments/assets/07f78cb8-303f-41f7-9691-067ebc5ee9b4" />
-<img width="1899" height="995" alt="{7C453BE0-59DF-466D-922A-2074BDFF0D14}" src="https://github.com/user-attachments/assets/6537ed35-d983-459a-83ba-6b4be80be9e0" />
+### Stripe Checkout
 
-
-Wishlist & Cart
-
-Users can add books to their wishlist or shopping cart.
-The cart and wishlist are preserved across sessions.
-
-<img width="863" height="1007" alt="{F7B630C4-A953-4062-B206-290B4946CF5F}" src="https://github.com/user-attachments/assets/45ee04ae-e4d1-45fe-b518-16df55563109" />
-
-<img width="1920" height="1011" alt="{546EDBFA-B119-4F71-8E2F-8CD43D6F8F4D}" src="https://github.com/user-attachments/assets/69c75b24-633a-4972-8693-a8ae4482ca8b" />
-
-
-Stripe Checkout
-
-Secure payment flow handled via Stripe Checkout.
+Secure payment flow handled via Stripe Checkout.  
 After successful payment, orders are stored and visible in the user’s account.
 
-<img width="1920" height="1010" alt="{71CB48F9-5AB5-4481-A86D-A785159484AC}" src="https://github.com/user-attachments/assets/0c2cf9cc-d411-4793-ace4-2c09ba0c38f5" />
+<!-- Add Stripe checkout screenshot here -->
+<img width="1920" height="1010" src="https://github.com/user-attachments/assets/0c2cf9cc-d411-4793-ace4-2c09ba0c38f5" />
 
+---
 
-Admin Panel
+### Admin Panel
 
-Admin-only panel displaying registered users with the ability to delete users.
+Admin-only panel displaying registered users with the ability to delete users.  
 Access is restricted based on user roles.
 
-<img width="1920" height="322" alt="{E3FFBD32-749B-40BB-AE9C-9BB9FD61A09F}" src="https://github.com/user-attachments/assets/3f499242-f3cd-4558-8550-b240bec5e788" />
+<!-- Add admin panel screenshots here -->
+<img width="1920" height="322" src="https://github.com/user-attachments/assets/3f499242-f3cd-4558-8550-b240bec5e788" />
 
-<img width="1920" height="984" alt="{D66DA880-14B9-4604-8801-3639E8CE7C10}" src="https://github.com/user-attachments/assets/adfa5136-fdc9-43ad-ad90-f160678d1b76" />
+<img width="1920" height="984" src="https://github.com/user-attachments/assets/adfa5136-fdc9-43ad-ad90-f160678d1b76" />
 
+---
 
-Security Notes
+## Security Notes
 
-Environment variables are used for sensitive keys
+- Environment variables are used for sensitive configuration
+- Firebase service credentials and Stripe secret keys are excluded from the repository
+- Helmet is used to enforce Content Security Policy (CSP)
+- Rate limiting is enabled to prevent abuse
 
-Firebase service credentials and Stripe secret keys are excluded from the repository
+---
 
-Helmet is used to enforce Content Security Policy (CSP)
+## Setup & Run Locally
 
-Rate limiting is enabled to prevent abuse
-
-Setup & Run Locally
+```bash
 npm install
 node app.js
-
-
-The application will run at:
-
-http://localhost:3000
-
-
-Create a .env file based on .env.example and provide your own Firebase and Stripe credentials.
-
-Project Purpose
-
-This project was developed as a full-stack web application to demonstrate:
-
-Backend and frontend integration
-
-Secure authentication and authorization
-
-Real payment processing flow
-
-Admin role management
-
-Clean and maintainable project structure
-
-It is suitable for portfolio, CV, and junior developer job applications.
-
-Author
-
-Orhan Izmirli
