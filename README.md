@@ -1,39 +1,42 @@
-# Currency Exchange App
+# Blossom Bookstore – Full-Stack Web Application
 
-A full-stack currency exchange application featuring secure authentication, external API integration, and a simulated payment system.
+A full-stack bookstore web application featuring authentication, role-based access control, external API integration, and Stripe payment flow.
 
 ---
 
-## Project Purpose
+## Project Overview
 
-This project was developed to demonstrate core full-stack development skills, including:
+Blossom Bookstore is a full-stack web application developed to demonstrate practical backend and frontend development skills.  
+The application allows users to browse books, manage their accounts, place orders, and complete payments, while administrators can manage users through a protected admin panel.
 
-- Backend and frontend integration
-- Secure authentication and authorization
-- External API consumption
-- Database design and management
-- Clean and maintainable project structure
-
-It is suitable for portfolio usage, CV presentation, and junior developer job applications.
+This project was originally developed as an academic assignment and later extended and refined for portfolio and professional use.
 
 ---
 
 ## Features
 
-### Authentication & Security
-- User registration and login using JWT authentication
+### Authentication & Authorization
+- User registration and login system
+- JWT-based authentication
 - Password hashing with bcrypt
-- Role-based access control (Admin / User)
+- Role-based access control (User / Admin)
+- Protected routes for authenticated users only
 
-### Core Functionality
-- Real-time currency exchange rates fetched from an external API
-- Wallet system for managing balances
-- Currency conversion operations
-- Payment simulation for testing financial flows
+### Book Store Functionality
+- Book catalog fetched from an external API
+- Search and sorting by title, author, and price
+- Wishlist and shopping cart functionality
+- Cart and wishlist persistence using local storage
 
-### User Management
-- User profile management
-- Admin-only access to user administration
+### Orders & Payments
+- Secure payment flow using Stripe Checkout
+- Orders saved after successful payment
+- User-specific order history
+
+### Admin Panel
+- Admin-only access panel
+- View all registered users
+- Delete users with role-based protection
 
 ---
 
@@ -48,11 +51,19 @@ It is suitable for portfolio usage, CV presentation, and junior developer job ap
 - Node.js
 - Express.js
 
-### Database
-- SQLite
-- Sequelize ORM
+### Database & Services
+- Firebase Firestore (database)
+- Firebase Authentication
+- Stripe API (payments)
+
+### Security
+- Environment variables for sensitive configuration
+- Helmet for Content Security Policy (CSP)
+- Rate limiting to prevent abuse
 
 ---
+
+##
 
 ## Application Overview
 
